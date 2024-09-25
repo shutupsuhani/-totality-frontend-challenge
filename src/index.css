@@ -1,0 +1,42 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+nav {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px; 
+    background-color: white; 
+    z-index: 1000; 
+}
+
+/* Add this CSS to your styles */
+
+.scrollbar-hide {
+    -ms-overflow-style: none; /* Internet Explorer and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+  
+  .icon-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 1rem; /* Adjust padding as needed */
+    white-space: nowrap; /* Prevent line break */
+  }
+  
+  .icon-item {
+    display: inline-block;
+    margin-right: 1.5rem; /* Spacing between items */
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+  }
+  
