@@ -39,4 +39,19 @@ nav {
     flex-direction: column;
     align-items: center;
   }
+
+
+  ::-webkit-scrollbar{
+    width: 5px;
+}
+
+::-webkit-scrollbar-track{
+    width: 6px;
+    background-color: aliceblue;
+}
+
+::-webkit-scrollbar-thumb{
+    width: 6px;
+    background-color: rgb(217, 214, 214);
+}
   

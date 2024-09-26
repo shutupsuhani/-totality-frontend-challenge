@@ -1,6 +1,6 @@
 import React from 'react';
 import icons, { IconData } from '../dummy/iconData';
-import Filter from './Filter';
+
 
 interface IconStripProps {
   onFilterChange: (filter: string) => void; 
@@ -30,9 +30,7 @@ const IconStrip: React.FC<IconStripProps> = ({ onFilterChange }) => {
         ))}
       </div>
 
-      <div className="fixed top-0 right-4"> {/* Positioning the Filter icon */}
-        <Filter />
-      </div>
+      
     </div>
   );
 }
