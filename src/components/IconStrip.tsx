@@ -3,7 +3,7 @@ import icons, { IconData } from '../dummy/iconData';
 
 
 interface IconStripProps {
-  onFilterChange: (filter: string) => void; 
+  onFilterChange: (filter: string | null) => void; 
 }
 
 const IconStrip: React.FC<IconStripProps> = ({ onFilterChange }) => {
@@ -12,7 +12,7 @@ const IconStrip: React.FC<IconStripProps> = ({ onFilterChange }) => {
       <div className="flex space-x-4 p-4 overflow-x-auto scrollbar-hide"> {/* Scrollable area for icons */}
         <div 
           className="cursor-pointer flex flex-col items-center" 
-          onClick={() => onFilterChange(null)} // Reset filter
+          onClick={() => onFilterChange(null)} 
         >
           <img src='/all.png' className='w-12 h-12'/>
           <span className="text-center mt-2 text-sm font-semibold">All</span>

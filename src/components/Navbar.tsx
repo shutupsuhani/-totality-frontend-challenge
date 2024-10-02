@@ -1,15 +1,17 @@
 // Navbar.tsx
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from "./AuthContext.tsx"; // Adjust the import path as necessary
+import { useAuth } from "../context/AuthContext.tsx"; // Adjust the import path as necessary
 import { signOut } from "firebase/auth"; // Import signOut function from Firebase
 import { auth } from '../firebase.ts';
+import { useNavigate } from "react-router-dom";
 
 
 const Navbar: React.FC = () => {
   const { user } = useAuth(); // Get the user from AuthContext
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const navigate=useNavigate();
 
   const toggleDropdown = () => {
     setIsDropdownOpen((prev) => !prev);
@@ -18,6 +20,7 @@ const Navbar: React.FC = () => {
   const handleLogout = async () => {
     try {
       await signOut(auth); // Call signOut from Firebase
+      navigate('/');
     } catch (error) {
       console.error("Logout error", error);
     }
@@ -47,9 +50,9 @@ const Navbar: React.FC = () => {
           </div>
         </Link>
 
-        <div className="pr-2 pl-1">
+        <Link to='/cart'><div className="pr-2 pl-1">
           <img src="/cart.png" className="rounded-full" width={40} height={40} />
-        </div>
+        </div></Link>
 
         <div
           className="flex items-center space-x-2 p-2 rounded-full border border-gray-500 relative"

@@ -1,6 +1,6 @@
 // Login.tsx
 import React, { useState } from 'react';
-import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -15,15 +15,26 @@ const Login: React.FC = () => {
         e.preventDefault();
         setError(null);
 
-        // Reset error message
-
         try {
             // Log in user with email and password
             await signInWithEmailAndPassword(auth, email, password);
             setSuccess('Login successful!');
-            navigate('/');
+            setTimeout(() => {
+                navigate('/');
+            }, 1000); // Slight delay for success message visibility
         } catch (err: any) {
-            setError(err.message);
+            // Customize error handling for better user experience
+            switch (err.code) {
+                case 'auth/user-not-found':
+                    setError('User not found.');
+                    break;
+                case 'auth/wrong-password':
+                    setError('Incorrect password.');
+                    break;
+                default:
+                    setError('Login failed. Please try again.');
+                    break;
+            }
         }
     };
 
@@ -60,10 +71,12 @@ const Login: React.FC = () => {
                     >
                         Login
                     </button>
-                    <p>
-                        Forgot your password? <a href="/reset-password" className="text-blue-600">Reset it here</a>
+                    <p className="mt-4">
+                        Forgot your password? <Link to="/reset-password" className="text-blue-600">Reset it here</Link>
                     </p>
-                    <p>Don't have an Account<Link to='/register'><span className='text-pink-500'>Register</span></Link></p>    
+                    <p className="mt-4">
+                        Don't have an account? <Link to="/register"><span className="text-pink-500">Register</span></Link>
+                    </p>
                 </form>
             </div>
         </div>

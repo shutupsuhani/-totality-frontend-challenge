@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
           <h4 className="text-lg font-bold mb-2">Support</h4>
           <p>Los Angeles,USA</p>
           <p>rentease@gmail.com</p>
-          <p>+91 8888899999</p>
+          <p>+123 99999</p>
         </div>
         <div className="col-span-1">
           <h4 className="text-lg font-bold mb-2">Account</h4>
@@ -35,8 +35,7 @@ const Footer: React.FC = () => {
             <li>My Account</li>
             <li>Login / Register</li>
             <Link to="/cart"><li>Cart</li></Link>
-            <Link to="/wishlist"><li>Wishlist</li></Link>
-            <li>Shop</li>
+            <li >Book</li>
           </ul>
         </div>
         <div className="col-span-1">
