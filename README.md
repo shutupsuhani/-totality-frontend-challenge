@@ -1,50 +1,49 @@
-# React + TypeScript + Vite
+Project name - Rentease 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+hosted-on:https://renteasebysuhani.netlify.app/
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Screenshot 2024-10-03 231116](https://github.com/user-attachments/assets/b07429ba-2373-4198-a220-86484fc52a17)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Rentease is a web-based rental property management application that allows users to browse rental properties, view property details, and book stays based on selected dates. Users can add properties to their cart and proceed with booking by specifying the desired start and end dates for their stay. The platform provides an easy-to-navigate interface and a seamless booking experience.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Features
+> Browse available rental properties with details such as price, location, rooms, and more.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+> View detailed information for each property.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+> Select booking dates and calculate total cost.
+
+> Add properties to the cart for booking.
+
+> Store booking details in local storage for later use.
+
+> Responsive design for both desktop and mobile views.
+
+Tech Stack
+
+>Frontend: React.js (with TypeScript)
+
+>Styling: CSS, Tailwind CSS
+
+>Routing: React Router
+
+>State Management: Context API
+
+>Build Tool: Vite
+
+>Date Handling: JavaScript Date objects
+
+
+Future Enhancements
+
+> Integrate a backend for storing and retrieving user booking history.
+
+> Add user authentication for personalized booking experiences.
+
+> Implement payment gateway integration for processing payments securely.
+
+> Improve date validation for more accurate handling of time zones.
