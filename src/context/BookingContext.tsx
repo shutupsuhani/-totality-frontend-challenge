@@ -6,7 +6,7 @@ interface BookingContextType {
     bookedHouses: { house: RentalHouse; dates: { start: string; end: string } }[];
     addBooking: (house: RentalHouse, dates: { start: string; end: string }) => void;
     removeBooking: (houseId: number) => void;
-    updateBooking: (houseId: number, action: 'increase' | 'decrease') => void;
+   /* updateBooking: (houseId: number, action: 'increase' | 'decrease') => void; */
     totalCost: number;
 }
 
@@ -24,14 +24,14 @@ export const BookingProvider: React.FC<{ children: ReactNode }> = ({ children })
        alert('Payment will be Refund');
     };
   
-    const updateBooking = (houseId: number, action: 'increase' | 'decrease') => {
+   /* const updateBooking = (houseId: number, action: 'increase' | 'decrease') => {
       
-    };
+    };  */
   
     const totalCost = bookedHouses.reduce((total, booking) => total + booking.house.pricePerNight, 0);
   
     return (
-      <BookingContext.Provider value={{ bookedHouses, addBooking, removeBooking, updateBooking, totalCost }}>
+      <BookingContext.Provider value={{ bookedHouses, addBooking, removeBooking, totalCost }}>
         {children}
       </BookingContext.Provider>
     );

@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 const Home: React.FC = () => {
   const [selectedFilter, setSelectedFilter] = useState<string | null>(null);
   
-  const handleFilterChange = (filter: string) => {
+  const handleFilterChange = (filter: string | null) => {
     setSelectedFilter(filter);
   };
 
